@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&family=Roboto:wght@300;400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    width: 1920;
+    height: 1080px;
+}
+
+.site-awal{
+    padding-top: 126px ;
+    padding-bottom: 232px;
+    background-color: aqua;
+
+    .pertama{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 122px;
+        font-family:'Oxygen', Courier, monospace; 
+        .waktu{
+            font-size: 2.5rem;
+            font-family: 'Roboto', Courier, monospace;
+            font-weight: 700;
+        }
+        .tanggal{
+            font-size: 2.5rem;
+            font-family: 'Roboto', Courier, monospace;
+            font-weight: 400;
+        }
+        h2{
+            width: 187px;
+            height: 56px;
+            font-family: 'Roboto', Courier, monospace;
+            font-size: 36px;
+            font-weight: 300;
+            line-height: 56.45px;
+        }
+
+        
+    }
+    .site-colour{
+        margin: 20px;
+
+        h1{
+            font-family: 'Oxygen', Courier, monospace;
+            font-weight: 400;
+            font-size: 3rem;
+            text-align: center;
+        }
+        input{
+            width: 24rem;
+            height: 3.438rem;
+            border: 1px solid #101010;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        button{
+            margin-top: 20px;
+        }
+    }
+}
+
+.site-kedua{
+    padding-top: 78px;
+    
+    .site-inputUser{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .wrapper{
+            display: inline-block;
+            padding-right: 20px;
+
+            h3{
+                font-family: 'Roboto', Courier, monospace;
+                font-weight: 400;
+                font-size: 1.625rem;
+                text-align: start;
+                line-height: 2.637rem;
+                padding-right: 20px;
+            }
+            .site-button{
+                display: flex;
+
+                input{
+                    width: 10.813rem;
+                    height: 3.375rem;
+                }
+            }
+        }
+        .termometer{
+            padding-left: 20px;
+
+            .sub-judul{
+                font-family: 'Roboto', Courier, monospace;
+                font-size: 1.625rem;
+                font-weight: 400;
+            }
+
+            .site-wrapper{
+                position: relative;
+                font-family: 'Roboto', Courier, monospace;
+                padding-top: 1.25rem;
+
+                select{
+                    width: 12.5rem;
+                }
+
+            }
+        }
+    }
+}

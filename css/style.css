@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&family=Roboto:wght@300;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 1920;
+  height: 1080px;
+}
+
+.site-awal {
+  padding-top: 126px;
+  padding-bottom: 232px;
+  background-color: aqua;
+}
+
+.site-awal .pertama {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 122px;
+  font-family: 'Oxygen', Courier, monospace;
+}
+
+.site-awal .pertama .waktu {
+  font-size: 2.5rem;
+  font-family: 'Roboto', Courier, monospace;
+  font-weight: 700;
+}
+
+.site-awal .pertama .tanggal {
+  font-size: 2.5rem;
+  font-family: 'Roboto', Courier, monospace;
+  font-weight: 400;
+}
+
+.site-awal .pertama h2 {
+  width: 187px;
+  height: 56px;
+  font-family: 'Roboto', Courier, monospace;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 56.45px;
+}
+
+.site-awal .site-colour {
+  margin: 20px;
+}
+
+.site-awal .site-colour h1 {
+  font-family: 'Oxygen', Courier, monospace;
+  font-weight: 400;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.site-awal .site-colour input {
+  width: 24rem;
+  height: 3.438rem;
+  border: 1px solid #101010;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.site-awal .site-colour button {
+  margin-top: 20px;
+}
+
+.site-kedua {
+  padding-top: 78px;
+}
+
+.site-kedua .site-inputUser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.site-kedua .site-inputUser .wrapper {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.site-kedua .site-inputUser .wrapper h3 {
+  font-family: 'Roboto', Courier, monospace;
+  font-weight: 400;
+  font-size: 1.625rem;
+  text-align: start;
+  line-height: 2.637rem;
+  padding-right: 20px;
+}
+
+.site-kedua .site-inputUser .wrapper .site-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.site-kedua .site-inputUser .wrapper .site-button input {
+  width: 10.813rem;
+  height: 3.375rem;
+}
+
+.site-kedua .site-inputUser .termometer {
+  padding-left: 20px;
+}
+
+.site-kedua .site-inputUser .termometer .sub-judul {
+  font-family: 'Roboto', Courier, monospace;
+  font-size: 1.625rem;
+  font-weight: 400;
+}
+
+.site-kedua .site-inputUser .termometer .site-wrapper {
+  position: relative;
+  font-family: 'Roboto', Courier, monospace;
+  padding-top: 1.25rem;
+}
+
+.site-kedua .site-inputUser .termometer .site-wrapper select {
+  width: 12.5rem;
+}
+/*# sourceMappingURL=style.css.map */

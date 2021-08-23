@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature by Augyeris Lioga S</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main class="site-awal" id="site-awal">
+        <div class="container">
+            <div class="pertama">
+                <div class="site-calendar">
+                    <div class="waktu" id="date-part"></div>
+                    <div class="tanggal" id="time-part"></div>
+                </div>
+              <h2 class="sambutan site-user"> Hi, <span id="span-username">User...</span></h2>
+            </div>
+            <div class="site-colour d-flex flex-column align-items-center">
+                <h1 class="text-center"> Pick Your <br> Moody Colour</h1>
+                <input class="form-control" id="color" />
+                <button type="button" class="btn btn-light" onclick="change()">Change</button>
+            </div>
+    </main>
+    <main class="site-kedua">
+        <div class="container">
+            <div class="p-5 mb-5">
+                <div class="site-inputUser d-flex flex-wrap justify-content-center">
+                    <div class="wrapper d-flex justify-content-center align-items-center">
+                        <h3>What's Your Name</h3>
+                        <div class="site-button d-flex justify-content-between">
+                            <input type="text" class="form-control" id="nama" name="username">
+                            <button type="button" class="btn btn-primary" onclick="username()">Input</button>
+                        </div>
+                    </div>
+                    <div class="termometer d-flex m-4 ">
+                        <div class="temperatur-wrapper d-flex flex-column justify-content-center">
+                            <p class="sub-judul text-center">Temperature Convertion</p>
+                            <div class="site-wrapper container d-flex justify-content-between align-items-center">
+                                <select class="form-select" name="from" id="from" onchange="select()">
+                                    <option value="celcius">Celcius</option>
+                                    <option value="farenheit">Farenheit</option>
+                                    <option value="reamur">Reamur</option>
+                                </select>
+                                <p>To</p>
+                                <select class="form-select" name="to" id="to" onchange="select()">
+                                    <option value="celcius">Celcius</option>
+                                    <option value="farenheit">Farenheit</option>
+                                    <option value="reamur">Reamur</option>
+                                </select>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <input
+                                type="number"
+                                name="kmh"
+                                id="num1"
+                                class="form-control"
+                                placeholder="Input here"
+                                onkeypress="validate(event)"
+                                onkeyup="conv()"
+                            />
+                            <p class="text-center p-3">result</p>
+                            <input
+                                type="number"
+                                id="result"
+                                class="form-control"
+                                placeholder="result"
+                                disabled
+                            />
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    const clock = document.getElementById('date-part');
+    setInterval (() => {
+        const now = moment();
+        const humanReadable = now.format('hh:mm:ss A');
+
+        console.log(humanReadable);
+        clock.textContent = humanReadable;
+    },1000)
+    
+    const date = document.getElementById('time-part');
+    setInterval (() => {
+        const now = moment();
+        const dateNow = now.format('DD MMMM YYYY');
+
+        console.log(dateNow);
+        date.textContent=dateNow;
+    },1000)
+
+    function change() {
+      document.getElementById("site-awal").style.backgroundColor =
+        document.getElementById("color").value;
+    };
+    
+              
+    function username() {
+        document.getElementById("span-username").innerHTML = document.querySelector("input[name='username']").value;
+
+    };
+
+</script>
+<script src="./js/suhu.js"></script>
+<script>
+    function select() {
+     document.getElementById("num1").value = "";
+     document.getElementById("result").value = "";
+   }
+
+   const converty = new Suhu();
+   function conv(){
+     if (document.getElementById("from").value == "celcius" && document.getElementById("to").value == "celcius"){
+       const res = converty.CelciustoCelcius(
+         parseInt(document.getElementById("num1").value)
+       );
+       document.getElementById("result").value=res;
+     }
+     if (document.getElementById("from").value == "celcius" && document.getElementById("to").value == "farenheit"){
+       const res = converty.CelciustoFahrenheit(
+         parseInt(document.getElementById("num1").value)
+       );
+       document.getElementById("result").value=res;
+     }
+     if (document.getElementById("from").value == "celcius" && document.getElementById("to").value == "reamur"){
+       const res = converty.CelciustoReamur(
+         parseInt(document.getElementById("num1").value)
+       );
+       document.getElementById("result").value=res;
+     }
+     if (document.getElementById("from").value == "farenheit" && document.getElementById("to").value == "celcius"){
+       const res = converty.FahrenheittoCelcius(
+         parseInt(document.getElementById("num1").value)
+       );
+       document.getElementById("result").value=res;
+     }
+     if (document.getElementById("from").value == "farenheit" && document.getElementById("to").value == "farenheit"){
+       const res = converty.FahrenheittoFahrenheit(
+         parseInt(document.getElementById("num1").value)
+       );
+       document.getElementById("result").value=res;
+     }
+     if (document.getElementById("from").value == "farenheit" && document.getElementById("to").value == "reamur"){
+       const res = converty.FahrenheittoReamur(
+         parseInt(document.getElementById("num1").value)
+       );
+       document.getElementById("result").value=res;
+     }
+     if (document.getElementById("from").value == "reamur" && document.getElementById("to").value == "celcius"){
+       const res = converty.ReamurtoCelcius(
+         parseInt(document.getElementById("num1").value)
+       );
+       document.getElementById("result").value=res;
+     }
+     if (document.getElementById("from").value == "reamur" && document.getElementById("to").value == "farenheit"){
+       const res = converty.ReamurtoFahrenheit(
+         parseInt(document.getElementById("num1").value)
+       );
+       document.getElementById("result").value=res;
+     }
+     if (document.getElementById("from").value == "reamur" && document.getElementById("to").value == "reamur"){
+       const res = converty.ReamurtoReamur(
+         parseInt(document.getElementById("num1").value)
+       );
+       document.getElementById("result").value=res;
+     }
+   }
+</script>
+</html>
