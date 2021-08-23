@@ -21,7 +21,7 @@ test('Fahrenheit to Fahrenheit', () => {
     expect(() => suhu.operate('FahrenheittoFahrenheit', 176)).not.toThrow();
     expect(suhu.operate('FahrenheittoFahrenheit', 176)).toBe(176);
   });
-test('Fahrenheit to Celcius', () => {
+test('Fahrenheit to Reamur', () => {
     expect(() => suhu.operate('FahrenheittoReamur', 176)).not.toThrow();
     expect(suhu.operate('FahrenheittoReamur', 176)).toBe(64);
   });
@@ -33,7 +33,7 @@ test('Reamur to Fahrenheit', () => {
     expect(() => suhu.operate('ReamurtoFahrenheit', 64)).not.toThrow();
     expect(suhu.operate('ReamurtoFahrenheit', 64)).toBe(176);
   });
-test('Reamur to Celcius', () => {
+test('Reamur to Reamur', () => {
     expect(() => suhu.operate('ReamurtoReamur', 64)).not.toThrow();
     expect(suhu.operate('ReamurtoReamur', 64)).toBe(64);
   });
